@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-
+   
     Dim drag As Boolean
 
     Dim mousex As Integer
@@ -30,9 +30,6 @@
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
 
-
-
-
     End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs)
@@ -40,13 +37,13 @@
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        Me.Close()
 
+        Me.Close()
 
     End Sub
 
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-      
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -56,8 +53,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-
-
+        Me.WindowState = FormWindowState.Minimized
 
     End Sub
 
@@ -87,9 +83,10 @@
             Button6.Visible = True
             Button7.Visible = True
             TextBox1.Visible = True
+            ProgressBar1.Visible = True
+            WebBrowser1.Navigate("www.google.com")
 
         Else
-
 
             WebBrowser1.Visible = False
             Button5.Visible = False
@@ -98,15 +95,24 @@
             Button6.Visible = False
             Button7.Visible = False
             TextBox1.Visible = False
-
+            ProgressBar1.Visible = False
         End If
     End Sub
 
     Private Sub GoToWebsiteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoToWebsiteToolStripMenuItem.Click
         If WebBrowser1.Visible = False Then
             WebBrowser1.Visible = True
+            Button5.Visible = True
+            Button4.Visible = True
+            Button2.Visible = True
+            Button6.Visible = True
+            Button7.Visible = True
+            TextBox1.Visible = True
+            ProgressBar1.Visible = True
+            WebBrowser1.Navigate("www.gracetex.weebly.com")
+        Else
+            WebBrowser1.Navigate("www.gracetex.weebly.com")
         End If
-        WebBrowser1.Navigate("www.thepsnappz.me")
     End Sub
 
     Private Sub ThisSoftwareToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThisSoftwareToolStripMenuItem.Click
@@ -152,16 +158,35 @@
         Throw New NotImplementedException
     End Sub
 
-    Private Sub ProgressBar1_Click_1(sender As Object, e As EventArgs) Handles ProgressBar1.Click
+
+    Private Sub WebBrowser1_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles WebBrowser1.ProgressChanged
+        Try
+
+            ProgressBar1.Maximum = e.MaximumProgress
+
+            ProgressBar1.Value = e.CurrentProgress
+
+            Label2.Text = "GTX-Loading"
+            If ProgressBar1.Value = ProgressBar1.Maximum Then
+                Label2.Text = "GTX"
+                ProgressBar1.Value = ProgressBar1.Maximum
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Increase10ToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        WebBrowser1.GoBack()
+    End Sub
 
-    Private Sub WebBrowser1_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles WebBrowser1.ProgressChanged
-        ProgressBar1.Increment(10)
-        If ProgressBar1.Value = 100 Or ProgressBar1.Value > 0 Then
-            ProgressBar1.Increment(-7)
-        End If
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        WebBrowser1.GoForward()
+
     End Sub
 
 End Class

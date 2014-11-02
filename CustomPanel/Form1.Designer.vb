@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,7 +37,7 @@ Partial Class Form1
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThisSoftwareToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DevelopersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GoToWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -49,6 +50,7 @@ Partial Class Form1
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,26 +94,26 @@ Partial Class Form1
         'CutToolStripMenuItem
         '
         Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.CutToolStripMenuItem.Text = "Cut"
         '
         'CopyToolStripMenuItem
         '
         Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.CopyToolStripMenuItem.Text = "Copy"
         '
         'PasteToolStripMenuItem
         '
         Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
-        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.PasteToolStripMenuItem.Text = "Paste"
         '
         'ShowWebbrowserToolStripMenuItem
         '
         Me.ShowWebbrowserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WebbrowserToolStripMenuItem, Me.DateToolStripMenuItem})
         Me.ShowWebbrowserToolStripMenuItem.Name = "ShowWebbrowserToolStripMenuItem"
-        Me.ShowWebbrowserToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.ShowWebbrowserToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.ShowWebbrowserToolStripMenuItem.Text = "Show/Hide"
         '
         'WebbrowserToolStripMenuItem
@@ -128,16 +130,17 @@ Partial Class Form1
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.GoToWebsiteToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.UpdateToolStripMenuItem, Me.GoToWebsiteToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
         '
-        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThisSoftwareToolStripMenuItem, Me.DevelopersToolStripMenuItem})
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThisSoftwareToolStripMenuItem})
+        Me.AboutToolStripMenuItem.Image = CType(resources.GetObject("AboutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ThisSoftwareToolStripMenuItem
@@ -146,11 +149,11 @@ Partial Class Form1
         Me.ThisSoftwareToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.ThisSoftwareToolStripMenuItem.Text = "This Software"
         '
-        'DevelopersToolStripMenuItem
+        'UpdateToolStripMenuItem
         '
-        Me.DevelopersToolStripMenuItem.Name = "DevelopersToolStripMenuItem"
-        Me.DevelopersToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.DevelopersToolStripMenuItem.Text = "Developers"
+        Me.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem"
+        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.UpdateToolStripMenuItem.Text = "Update"
         '
         'GoToWebsiteToolStripMenuItem
         '
@@ -198,6 +201,7 @@ Partial Class Form1
         '
         'Button5
         '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.Location = New System.Drawing.Point(1296, 25)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(51, 23)
@@ -240,16 +244,18 @@ Partial Class Form1
         Me.WebBrowser1.Location = New System.Drawing.Point(12, 65)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(1335, 690)
+        Me.WebBrowser1.Size = New System.Drawing.Size(1361, 690)
         Me.WebBrowser1.TabIndex = 5
         Me.WebBrowser1.Visible = False
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(12, 63)
+        Me.ProgressBar1.ForeColor = System.Drawing.Color.Lime
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 60)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(1335, 3)
+        Me.ProgressBar1.Size = New System.Drawing.Size(1361, 5)
         Me.ProgressBar1.TabIndex = 7
+        Me.ProgressBar1.Visible = False
         '
         'Label1
         '
@@ -261,13 +267,23 @@ Partial Class Form1
         Me.Label1.TabIndex = 6
         Me.Label1.Visible = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(648, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
+        Me.Label2.TabIndex = 8
+        '
         'Form1
         '
+        Me.AccessibleName = ""
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1385, 767)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.WebBrowser1)
@@ -302,7 +318,6 @@ Partial Class Form1
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ThisSoftwareToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DevelopersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GoToWebsiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -320,5 +335,7 @@ Partial Class Form1
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
     Friend WithEvents DateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents UpdateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
